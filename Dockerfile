@@ -23,7 +23,7 @@ COPY nginx/default.conf /etc/nginx/conf.d/default.conf
 COPY nginx/supervisord.conf /etc/supervisord.conf
 
 # 拷贝房间密码配置（或用 volume 替代）
-COPY room_pwd.json /app/room_pwd.json
+# COPY room_pwd.json /app/room_pwd.json
 
 # 暴露外部端口（由 Nginx 提供访问入口）
 EXPOSE 80
