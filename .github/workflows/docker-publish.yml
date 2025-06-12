@@ -10,7 +10,7 @@ on:
       - '**/*.json'
       - '**/*.conf'
       - 'docker-compose.yml'
-
+  workflow_dispatch:
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
