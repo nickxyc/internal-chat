@@ -3,8 +3,6 @@ FROM node:16-alpine
 # 安装 Nginx 和 supervisord
 RUN apk add --no-cache nginx supervisor
 
-# 设置中国 npm 镜像
-RUN npm config set registry https://registry.npmmirror.com
 
 # 设置工作目录
 WORKDIR /app
@@ -22,7 +20,7 @@ RUN mkdir -p /run/nginx /var/log/supervisor
 COPY nginx/default.conf /etc/nginx/conf.d/default.conf
 
 # 拷贝 supervisor 配置
-COPY supervisord.conf /etc/supervisord.conf
+COPY nginx/supervisord.conf /etc/supervisord.conf
 
 # 拷贝房间密码配置（或用 volume 替代）
 COPY room_pwd.json /app/room_pwd.json
