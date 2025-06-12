@@ -3,7 +3,7 @@ name: Build and Push Docker Image to GHCR
 on:
   push:
     branches:
-      - main  # 或你希望触发的分支
+      - master  # 或你希望触发的分支
     paths:
       - '**/Dockerfile'
       - '**/*.js'
